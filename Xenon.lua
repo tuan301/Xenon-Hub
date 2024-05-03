@@ -87,24 +87,24 @@ getgenv()['JsonDecode'] = function(msg)
     return game:GetService("HttpService"):JSONDecode(msg)
 end
 getgenv()['Check_Setting'] = function(Name)
-    if not _G.Dis and not isfolder('Switch Hub BF Premium') then
-        makefolder('Switch Hub BF Premium')
+    if not _G.Dis and not isfolder('X Hub Premium') then
+        makefolder('X Hub Premium')
     end
-    if not _G.Dis and not isfile('Switch Hub BF Premium/'..Name..'.json') then
-        writefile('Switch Hub BF Premium/'..Name..'.json',JsonEncode(_G.Setting_table))
+    if not _G.Dis and not isfile('X Hub Premium/'..Name..'.json') then
+        writefile('X Hub Premium/'..Name..'.json',JsonEncode(_G.Setting_table))
     end
 end
 getgenv()['Get_Setting'] = function(Name)
-    if not _G.Dis and isfolder('Switch Hub BF Premium') and isfile('Switch Hub BF Premium/'..Name..'.json') then
-        _G.Setting_table = JsonDecode(readfile('Switch Hub BF Premium/'..Name..'.json'))
+    if not _G.Dis and isfolder('X Hub Premium') and isfile('X Hub Premium/'..Name..'.json') then
+        _G.Setting_table = JsonDecode(readfile('X Hub Premium/'..Name..'.json'))
         return _G.Setting_table
 	elseif not _G.Dis then
         Check_Setting(Name)
     end
 end
 getgenv()['Update_Setting'] = function(Name)
-    if not _G.Dis and isfolder('Switch Hub BF Premium') and isfile('Switch Hub BF Premium/'..Name..'.json') then
-        writefile('Switch Hub BF Premium/'..Name..'.json',JsonEncode(_G.Setting_table))
+    if not _G.Dis and isfolder('X Hub Premium') and isfile('Switch Hub BF Premium/'..Name..'.json') then
+        writefile('X Hub Premium/'..Name..'.json',JsonEncode(_G.Setting_table))
 	elseif not _G.Dis then
         Check_Setting(Name)
     end
@@ -141,7 +141,7 @@ end
 
 function Text(value)
     game.StarterGui:SetCore("SendNotification", {
-        Title = "Switch Notification", 
+        Title = ".X.", 
         Text = tostring(value),
         Icon = "http://www.roblox.com/asset/?id=9606070311",
         Duration = 10
@@ -149,7 +149,7 @@ function Text(value)
 end
 function Com()
     game.StarterGui:SetCore("SendNotification", {
-        Title = "Switch Notification", 
+        Title = ".X.", 
         Text = "✅  Complete",
         Icon = "http://www.roblox.com/asset/?id=9606070311",
         Duration = 5
